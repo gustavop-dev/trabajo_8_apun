@@ -599,6 +599,114 @@ footer {
     }
 }
 
+/* Image Styles */
+.section-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin: 2rem 0;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.02);
+}
+
+.intro-image-container {
+    margin-bottom: 2rem;
+}
+
+.image-container-center {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.image-text-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+.inline-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+}
+
+/* Colombia Section Styles */
+.colombia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.colombia-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #FFCD00;
+    position: relative;
+    overflow: hidden;
+}
+
+.colombia-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FFCD00 0%, #003893 50%, #CE1126 100%);
+}
+
+.colombia-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.colombia-card h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Engineering Peace Grid */
+.engineering-peace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.peace-principle-card {
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--peace-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.peace-principle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.peace-principle-card h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
@@ -608,4 +716,20 @@ html {
 ::selection {
     background: var(--secondary-color);
     color: var(--white);
+}
+
+/* Responsive Images */
+@media (max-width: 768px) {
+    .image-text-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .inline-image {
+        max-height: 300px;
+    }
+
+    .colombia-grid,
+    .engineering-peace-grid {
+        grid-template-columns: 1fr;
+    }
 }
